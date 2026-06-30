@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "Long Horizon Development"
+  short_description: "Checkpointed long-running development"
+  default_prompt: "Use $long-horizon-development to complete this task with checkpointed execution and artifact-based validation."

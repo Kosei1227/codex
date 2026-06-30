@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "Experiment Driven Development"
+  short_description: "Structured iteration for ambiguous coding tasks"
+  default_prompt: "Use $experiment-driven-development to tackle this exploratory bug or feature with tracked iterations and evidence."

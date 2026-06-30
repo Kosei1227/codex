@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "HTML Artifact"
+  short_description: "Create readable HTML artifacts and explainers"
+  default_prompt: "Use $html-artifact to create a single-file HTML implementation blueprint with diagrams, code snippets, and an executive summary."

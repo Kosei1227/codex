@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "Systematic Debugging"
+  short_description: "Four-phase debugging for root-cause-focused fixes"
+  default_prompt: "Use $systematic-debugging to investigate this bug methodically and fix the root cause."

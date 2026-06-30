@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "Solution AI Engineer"
+  short_description: "Autonomous solution engineering loop for complex product work"
+  default_prompt: "Use $solution-ai-engineer to take this product or engineering task from intent through design, implementation, validation, and concise reporting."

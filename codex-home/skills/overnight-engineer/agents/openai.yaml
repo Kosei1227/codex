@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "Overnight Engineer"
+  short_description: "Bounded unattended coding workflow"
+  default_prompt: "Use $overnight-engineer to run a bounded overnight engineering task with isolated work, validation, and a morning report."

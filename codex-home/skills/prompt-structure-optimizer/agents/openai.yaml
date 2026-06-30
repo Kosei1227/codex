@@ -1,0 +1,3 @@
+﻿display_name: Prompt Structure Optimizer
+short_description: Refactor brittle runtime LLM prompts into hierarchical contracts.
+default_prompt: Review this runtime prompt for flat rule accretion, unclear authority boundaries, and missing hierarchy. Propose a structured prompt contract and eval plan without adding task-specific heuristics.

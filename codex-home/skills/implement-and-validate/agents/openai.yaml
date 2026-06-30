@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "Implement and Validate"
+  short_description: "Implement tasks and validate them end to end"
+  default_prompt: "Use $implement-and-validate to implement the requested change, run validation, and verify the result."

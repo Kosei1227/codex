@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "LLM Integration Engineering"
+  short_description: "Runtime LLM architecture and prompt contracts"
+  default_prompt: "Use $llm-integration-engineering to design or review runtime LLM product behavior with component contracts, prompt contracts, authority boundaries, trust boundaries, metacognitive control loops, evals, observability, fallbacks, and safe rollout."

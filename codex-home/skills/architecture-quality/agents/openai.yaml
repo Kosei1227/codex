@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "Architecture Quality"
+  short_description: "Clean, testable code structure"
+  default_prompt: "Use $architecture-quality to design or review this implementation for clean architecture, SOLID boundaries, and testability."

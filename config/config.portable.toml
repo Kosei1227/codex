@@ -1,0 +1,200 @@
+﻿# Portable Codex config exported from C:\Users\fruit\.codex\config.toml.
+# Machine-specific paths, auth, plugin caches, project trust entries, Node REPL runtime paths,
+# and marketplace cache paths are intentionally omitted.
+
+model = "gpt-5.5"
+model_reasoning_effort = "xhigh"
+model_verbosity = "medium"
+model_context_window = 500000
+model_auto_compact_token_limit = 480000
+tool_output_token_limit = 12000
+personality = "pragmatic"
+approval_policy = "on-request"
+approvals_reviewer = "auto_review"
+sandbox_mode = "workspace-write"
+plan_mode_reasoning_effort = "high"
+service_tier = "default"
+
+[windows]
+sandbox = "elevated"
+
+[features]
+multi_agent = true
+memories = true
+js_repl = false
+
+[profiles.balanced]
+model = "gpt-5.5"
+model_reasoning_effort = "high"
+model_verbosity = "medium"
+model_context_window = 500000
+model_auto_compact_token_limit = 480000
+tool_output_token_limit = 12000
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+approvals_reviewer = "auto_review"
+
+[profiles.architect]
+model = "gpt-5.5"
+model_reasoning_effort = "xhigh"
+model_verbosity = "medium"
+model_context_window = 500000
+model_auto_compact_token_limit = 480000
+tool_output_token_limit = 12000
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+approvals_reviewer = "auto_review"
+
+[profiles.overnight]
+model = "gpt-5.5"
+model_reasoning_effort = "high"
+model_verbosity = "medium"
+model_context_window = 500000
+model_auto_compact_token_limit = 480000
+tool_output_token_limit = 12000
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+approvals_reviewer = "auto_review"
+
+[profiles.overnight_unattended]
+model = "gpt-5.5"
+model_reasoning_effort = "high"
+model_verbosity = "medium"
+model_context_window = 500000
+model_auto_compact_token_limit = 480000
+tool_output_token_limit = 16000
+sandbox_mode = "workspace-write"
+approval_policy = "never"
+
+[profiles.full_autonomy]
+model = "gpt-5.5"
+model_reasoning_effort = "high"
+model_verbosity = "medium"
+model_context_window = 500000
+model_auto_compact_token_limit = 480000
+tool_output_token_limit = 12000
+sandbox_mode = "danger-full-access"
+approval_policy = "never"
+
+[profiles.safe]
+model = "gpt-5.5"
+model_reasoning_effort = "high"
+model_verbosity = "medium"
+model_context_window = 500000
+model_auto_compact_token_limit = 480000
+tool_output_token_limit = 12000
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+approvals_reviewer = "auto_review"
+web_search = "live"
+
+[agents]
+max_threads = 6
+max_depth = 1
+
+[agents.architect]
+description = "Architecture and planning agent for acceptance criteria, tradeoffs, authority boundaries, and validation design."
+config_file = "agents/architect.toml"
+
+[agents.executor]
+description = "Scoped implementation agent after the goal, write scope, and validation path are clear."
+config_file = "agents/executor.toml"
+
+[agents.reviewer]
+description = "Review agent focused on regressions, missing validation, security, heuristic debt, and runtime LLM contract gaps."
+config_file = "agents/reviewer.toml"
+
+[agents.explorer]
+description = "Read-only codebase explorer for gathering source evidence before changes are proposed."
+config_file = "agents/explorer.toml"
+
+[agents.docs_researcher]
+description = "Documentation specialist that verifies APIs, framework behavior, and release-note claims against primary sources."
+config_file = "agents/docs-researcher.toml"
+
+[plugins."hugging-face@openai-curated"]
+enabled = true
+
+[plugins."gmail@openai-curated"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."google-calendar@openai-curated"]
+enabled = true
+
+[plugins."github@openai-curated"]
+enabled = true
+
+[plugins."chrome@openai-bundled"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
+enabled = true
+
+[notice]
+fast_default_opt_out = true
+hide_rate_limit_model_nudge = true
+
+[notice.model_migrations]
+"gpt-5.2" = "gpt-5.4"
+"gpt-5.4" = "gpt-5.5"
+
+[mcp_servers.context7]
+command = "npx"
+args = ["-y", "@upstash/context7-mcp"]
+
+[mcp_servers.openaiDeveloperDocs]
+url = "https://developers.openai.com/mcp"
+
+[mcp_servers.playwright]
+command = "npx"
+args = ["-y", "@playwright/mcp"]
+
+[desktop]
+appearanceTheme = "dark"
+appearanceDarkCodeThemeId = "vscode-plus"
+conversationDetailMode = "STEPS_COMMANDS"
+keepRemoteControlAwakeWhilePluggedIn = true
+followUpQueueMode = "queue"
+
+[desktop.appearanceDarkChromeTheme]
+accent = "#007acc"
+contrast = 50
+ink = "#d4d4d4"
+opaqueWindows = true
+surface = "#1e1e1e"
+
+[desktop.appearanceDarkChromeTheme.fonts]
+code = '"Geist Mono", ui-monospace, "SFMono-Regular"'
+ui = "Geist, Inter"
+
+[desktop.appearanceDarkChromeTheme.semanticColors]
+diffAdded = "#369432"
+diffRemoved = "#f44747"
+skill = "#000080"
+
+[desktop.open-in-target-preferences]
+global = "cursor"
+
+[sandbox_workspace_write]
+exclude_tmpdir_env_var = false
+writable_roots = []
+network_access = true
+exclude_slash_tmp = false

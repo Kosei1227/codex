@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "Repo Context Bootstrap"
+  short_description: "Fast repo understanding and working-memory setup"
+  default_prompt: "Use $repo-context-bootstrap to map this repo, identify key commands, and create a reliable working context."

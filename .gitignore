@@ -1,0 +1,28 @@
+﻿# Local state that must not be committed.
+auth.json
+.sandbox/
+.sandbox-secrets/
+.tmp/
+tmp/
+sessions/
+log/
+cache/
+plugins/cache/
+browser/
+computer-use/
+node_repl/
+history.jsonl
+session_index.jsonl
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.db
+*.db-shm
+*.db-wal
+*.log
+
+# Local editor and OS files.
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

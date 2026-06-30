@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "Knowledge Graph Navigation"
+  short_description: "Controlled Graphify architecture navigation"
+  default_prompt: "Use $knowledge-graph-navigation to navigate project architecture and cross-module relationships with Graphify while verifying source files before factual claims or edits."
