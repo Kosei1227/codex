@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "Evidence First Slides"
+  short_description: "Evidence-first technical slide style"
+  default_prompt: "Use $evidence-first-slides to create an evidence-first technical presentation."

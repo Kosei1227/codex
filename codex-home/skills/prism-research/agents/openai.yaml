@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "Prism Research"
+  short_description: "Local research and LaTeX workspace"
+  default_prompt: "Use $prism-research to create or advance a Codex-backed Prism research workspace with evidence, citations, LaTeX checks, and a concise visual recap."

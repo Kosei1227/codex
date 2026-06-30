@@ -32,6 +32,8 @@ Turn the discovered failure into an executable contract. The test should fail ag
 - Retry logic hides a deterministic failure.
 - Browser automation confirms a click but not the intended product effect.
 - LLM output is accepted without schema, allowed IDs, confidence, or evidence validation.
+- New enum, status, tier, route, action, or provider values are added without updating every consumer, filter, display, persistence, and validation path.
+- Review accepts "tests pass" without a bug-lock assertion for the exact field, row, event, state transition, UI destination, or side effect that failed.
 
 ## Workflow
 
@@ -48,8 +50,16 @@ Turn the discovered failure into an executable contract. The test should fail ag
    - Assert the field, state, event, row, file, or UI effect that was previously wrong.
    - Prefer deterministic fixtures over sleeps or broad retries.
    - For LLM-integrated behavior, validate schema failures, ambiguous output, missing evidence, and unknown IDs.
+   - For enum, API, schema, or status changes, assert all sibling values and every newly added value at the consumer boundary that would have missed it.
 4. Run the closest meaningful validation command.
 5. Report whether the test would have caught the original bug.
+
+## Review-Derived Contracts
+
+When a review finds SQL risk, race risk, shell injection, unsafe LLM output,
+API shape drift, migration risk, or enum incompleteness, convert the finding
+into one executable contract where feasible. The preferred test is the one that
+would fail on the original diff, not the one that merely increases coverage.
 
 ## Sandbox Or Mock Parity
 

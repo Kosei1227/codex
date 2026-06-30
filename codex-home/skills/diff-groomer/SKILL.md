@@ -43,6 +43,9 @@ Before modifying files, produce:
 - Mixed concerns.
 - Redundancy candidates inside touched files.
 - Risky files and review hotspots.
+- Whole work-unit recap that includes the original implementation, follow-up fixes, generated artifacts, tests, and later cleanup owned by the branch.
+- Grounded file map with change type, purpose, and review relevance for each meaningful changed file.
+- Key changed files whose diffs carry the main implementation risk.
 - Recommended PR or commit split.
 - Minimal cleanup plan.
 - Validation plan.
@@ -81,6 +84,7 @@ Run the smallest meaningful validation first:
 - Existing targeted tests for touched behavior.
 - Typecheck or lint when relevant and affordable.
 - Build only when it is the closest meaningful proof or the change affects build output.
+- Browser, screenshot, rendered artifact, or local HTML-artifact verification when the diff changes visible UI, generated documents, diagrams, screenshots, or other visual review surfaces.
 
 If validation is blocked, report the exact command, error, and residual risk.
 
@@ -89,8 +93,29 @@ If validation is blocked, report the exact command, error, and residual risk.
 Return:
 
 - Files changed.
+- Whole work-unit recap grounded in the actual diff, not only the last edit.
+- Key changed files and why they matter.
 - Behavior-preserving refactors made.
 - Any behavior changes, or explicitly say none intended.
 - Commands run and results.
 - Suggested commit or PR split.
 - Remaining review risks.
+
+## Recap Discipline
+
+When the user asks for a recap, PR summary, branch summary, or review handoff,
+summarize the whole logical work unit rather than the most recent prompt or
+last hunk. Separate branch-owned changes from unrelated dirty work that existed
+before the task. Build claims mechanically from real diffs, files, tests,
+schemas, and rendered outputs. Label any inference that is not directly present
+in the diff.
+
+A useful recap includes:
+
+- Outcome: what changed and why.
+- Footprint: changed files grouped by feature, refactor, tests, generated output, dependency, config, or formatting.
+- Contracts: API, schema, prompt, runtime, auth, permission, persistence, or UI contracts changed by the diff.
+- Key changes: the 3-8 most review-worthy files or hunks, with short annotations.
+- UI or artifact impact: screenshots, browser checks, rendered documents, or an HTML artifact when prose cannot prove the visual result.
+- Validation: exact commands and what they prove.
+- Residual risk: what a reviewer should inspect manually.

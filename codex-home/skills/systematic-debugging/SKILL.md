@@ -58,6 +58,21 @@ Use this skill to debug without thrashing. It prevents speculative fixes by requ
 - Prefer one strong theory plus one confirming experiment.
 - Keep instrumentation cheap and remove it if it is not part of the final fix.
 - If the reported bug is actually a requirement mismatch, say so clearly.
+- If two fixes fail against the same symptom, stop patching and re-open the investigation at the boundary map: caller, callee, state, persistence, external dependency, and validation target.
+- Separate action completion from semantic success. For UI, browser, graph, and agent workflows, verify the intended product effect, not only that a click, command, or tool call completed.
+
+## Investigation Notes
+
+Maintain a small hypothesis log for difficult bugs:
+
+- Symptom and reproduction.
+- Current strongest hypothesis.
+- Evidence that supports it.
+- Evidence that would falsify it.
+- Experiment run and result.
+- Next narrowed step.
+
+Use this log in the final report when the path was non-obvious or previous attempts failed.
 
 ## Validation Requirements
 

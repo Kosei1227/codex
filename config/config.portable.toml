@@ -1,6 +1,6 @@
 ﻿# Portable Codex config exported from C:\Users\fruit\.codex\config.toml.
 # Machine-specific paths, auth, plugin caches, project trust entries, Node REPL runtime paths,
-# and marketplace cache paths are intentionally omitted.
+# marketplace cache paths, and desktop per-path preferences are intentionally omitted.
 
 model = "gpt-5.5"
 model_reasoning_effort = "xhigh"
@@ -13,8 +13,9 @@ approval_policy = "on-request"
 approvals_reviewer = "auto_review"
 sandbox_mode = "workspace-write"
 plan_mode_reasoning_effort = "high"
-service_tier = "default"
 
+
+service_tier = "default"
 [windows]
 sandbox = "elevated"
 
@@ -148,6 +149,9 @@ enabled = true
 [plugins."template-creator@openai-primary-runtime"]
 enabled = true
 
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+
 [notice]
 fast_default_opt_out = true
 hide_rate_limit_model_nudge = true
@@ -166,6 +170,22 @@ url = "https://developers.openai.com/mcp"
 [mcp_servers.playwright]
 command = "npx"
 args = ["-y", "@playwright/mcp"]
+
+[mcp_servers.chrome-devtools]
+command = "cmd"
+args = ["/c", "npx", "-y", "chrome-devtools-mcp@latest", "--no-usage-statistics", "--no-performance-crux"]
+
+[mcp_servers.aws-knowledge]
+url = "https://knowledge-mcp.global.api.aws"
+
+[mcp_servers.firecrawl]
+url = "https://mcp.firecrawl.dev/v2/mcp"
+
+[mcp_servers.figma]
+url = "https://mcp.figma.com/mcp"
+
+[mcp_servers.notion]
+url = "https://mcp.notion.com/mcp"
 
 [desktop]
 appearanceTheme = "dark"

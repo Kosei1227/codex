@@ -29,6 +29,21 @@ Choose the smallest pattern set that fits the change.
 - Dependency inversion: depend on interfaces or protocols at boundaries where implementation details vary, such as storage, HTTP clients, email, payments, file systems, and LLM providers.
 - Responsibility separation: keep validation, authorization, orchestration, domain rules, persistence, formatting, and transport concerns separate unless the code is intentionally small and local.
 
+## Plan Hardening
+
+For non-trivial plans, harden the design before implementation. Force hidden
+assumptions into explicit architecture artifacts:
+
+- Data flow: inputs, transformations, persistence, outputs, and side effects.
+- State transitions: status changes, retries, idempotency, and recovery paths.
+- Trust boundaries: auth, permissions, user input, LLM output, external APIs, and file or shell access.
+- Failure modes: partial success, stale data, timeouts, low confidence, concurrency, and rollback.
+- Test matrix: happy path, negative path, edge case, contract, migration, and UI evidence where relevant.
+
+When the plan is broad, migration-like, API-facing, runtime-LLM-facing, or
+cross-module, load `references/plan-hardening-checklist.md` and use it as a
+pre-implementation review.
+
 ## Boundary Rules
 
 Apply these rules when adding or changing production code:
@@ -75,3 +90,7 @@ When using this skill for design or review, report:
 - Why the abstraction is necessary, or why no new abstraction is needed.
 - Tests or validation that prove the boundary.
 - Residual risk or overengineering risk.
+
+## References
+
+For a deeper design hardening pass, load `references/plan-hardening-checklist.md`.

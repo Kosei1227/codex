@@ -35,6 +35,7 @@ Do not use this skill for package release readiness only unless the user asks fo
    - Performance, latency, rate limits, and cost.
    - User trust and supportability.
    - Runtime LLM contracts when applicable.
+   - CI/CD, dependency supply chain, and agent or skill supply chain risk when applicable.
 3. Verify evidence:
    - Read the source path that actually owns each risk.
    - Distinguish confirmed issue, plausible risk, and unknown.
@@ -55,6 +56,19 @@ For products that use LLMs at runtime, check:
 - Traceability of prompt version, model, input digest, raw output, parsed output, and accepted output.
 - Fail-closed behavior for missing evidence, unknown IDs, and schema violations.
 
+## Security And Threat Model Pass
+
+When the changed surface touches auth, data writes, external fetches, CI/CD,
+dependencies, secrets, webhooks, LLM outputs, shell execution, browser
+automation, or agent skills, include a security-focused pass:
+
+- OWASP-style input, auth, injection, XSS, SSRF, deserialization, and secrets checks.
+- STRIDE-style spoofing, tampering, repudiation, information disclosure, denial of service, and escalation checks.
+- Dependency and workflow checks for lockfile drift, install scripts, GitHub Actions permissions, artifact publication, and secret usage.
+- LLM and agent checks for prompt injection, untrusted tool output, unsafe side effects, and missing evidence validation.
+
+For the full checklist, load `references/security-threat-audit.md`.
+
 ## Output
 
 Lead with findings. Use severity labels:
@@ -70,3 +84,7 @@ Then include:
 - Validation reviewed or run.
 - Remaining unknowns.
 - Smallest next fixes.
+
+## References
+
+For a security and threat-model checklist, load `references/security-threat-audit.md`.

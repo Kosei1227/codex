@@ -49,6 +49,15 @@ Define the success target before designing:
 5. Non-goals and files or systems that should not be touched.
 
 For small tasks, keep this framing internal. For broad tasks, state a short plan.
+For abstract product or architecture work, ground the plan with one concrete
+product example or workflow before moving into generalized architecture.
+Published plans should stand alone without relying on hidden chat context.
+
+For ambiguous product work, run a product reframe before accepting the user's
+first feature framing. Identify the underlying pain, the specific user or
+workflow, the narrowest valuable wedge, and any higher-leverage version that
+materially changes the plan. Present expansions as choices, not hidden scope.
+For a compact prompt pattern, load `references/product-reframe.md`.
 
 ### 2. Ground The Context
 
@@ -74,6 +83,11 @@ Consider:
 6. Testability and rollback or recovery path.
 
 Avoid adding abstractions unless they remove real complexity, reduce meaningful duplication, or match a local pattern.
+For non-trivial backend, data, API, agent, or workflow changes, decide the
+hard-to-reverse bets first: data shape, public identifiers, wire format, API
+contract, auth and ownership boundaries, persistence model, migration path, and
+observability. State what existing files, helpers, schemas, actions, commands,
+or patterns are being reused before describing what is new.
 
 ### 4. Implement Narrowly
 
@@ -121,8 +135,16 @@ Use these checkpoints during architecture-sensitive work:
 4. Would this design still be maintainable after model, dependency, data, or UI changes?
 5. Can failures be observed, reproduced, and converted into tests or evals?
 6. Is there a simpler path that satisfies the same acceptance criteria with less operational risk?
+7. Are any hard-to-reverse decisions implicit, missing, or left as vague future work?
+8. Are any claims about files, APIs, schemas, UI states, or behavior ungrounded in source, traces, diffs, or current documentation?
+9. Does the plan commit to a coherent first slice instead of presenting a menu of options where the implementation needs a decision?
 
 Do not treat model self-reflection as proof. Use external evidence, validators, tests, traces, logs, and user-visible behavior.
+
+For high-risk plans such as architecture, migration, data model, auth, API,
+multi-file, or runtime LLM changes, do a skeptical self-review before handoff.
+Fix obvious issues in the plan, such as ungrounded claims, missing validation,
+or hidden breaking changes. Escalate only genuine judgment calls to the user.
 
 ## Autonomy Levels
 
@@ -149,3 +171,4 @@ Stop and report when:
 ## Reference
 
 For a reusable quality rubric, load `references/engineering-rubric.md`.
+For product reframing and founder-style scope challenge, load `references/product-reframe.md`.

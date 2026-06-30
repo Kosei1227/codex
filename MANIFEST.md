@@ -4,10 +4,10 @@ Generated for local Codex profile transfer on 2026-06-30.
 
 ## Contents
 
-- Total tracked candidate files before git commit: 106
-- Total size before git commit: about 387 KB
+- Total tracked candidate files before git commit: 136
+- Total size before git commit: about 381 KB
 - Source Codex home: `C:\Users\fruit\.codex`
-- Export root: `C:\Users\fruit\OneDrive\Documents\Playground\codex-private-export`
+- Export root: `C:\Users\fruit\VSCode\codex`
 - Target repository: `Kosei1227/codex`
 
 ## Skill Directories Included
@@ -18,6 +18,7 @@ Generated for local Codex profile transfer on 2026-06-30.
 - `code-tour`
 - `diff-groomer`
 - `doc`
+- `evidence-first-slides`
 - `experiment-driven-development`
 - `html-artifact`
 - `implement-and-validate`
@@ -28,12 +29,13 @@ Generated for local Codex profile transfer on 2026-06-30.
 - `pdf`
 - `playwright`
 - `playwright-interactive`
+- `prism-research`
 - `production-audit`
 - `prompt-structure-optimizer`
 - `repo-context-bootstrap`
 - `solution-ai-engineer`
 - `systematic-debugging`
-- `visual-plan`
+- `visual-recap`
 
 ## System Content Not Copied
 

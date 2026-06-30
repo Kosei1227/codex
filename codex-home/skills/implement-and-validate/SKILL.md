@@ -57,6 +57,21 @@ For local browser checks:
 4. Capture a screenshot or equivalent evidence when useful.
 5. Stop or clean up background processes when they are no longer needed.
 
+## QA Evidence Loop
+
+For user-facing changes, treat QA as an evidence loop, not a checklist of
+commands. Prefer report-only diagnosis before broad fixes when the bug surface
+is unclear.
+
+1. Identify the user workflow and expected effect.
+2. Exercise the workflow in the closest real environment available.
+3. Record the observed effect, console or network errors, screenshots, logs, or test output.
+4. Fix only issues tied to observed evidence or an explicit acceptance criterion.
+5. Re-run the original workflow and the nearest regression check.
+
+For deeper browser, UX, and regression evidence guidance, load
+`references/qa-evidence-rubric.md`.
+
 ## Guardrails
 
 - Keep changes scoped to the requested task.
@@ -64,6 +79,7 @@ For local browser checks:
 - If validation fails because of an unrelated repo issue, report that issue separately and do not misattribute it to the new change.
 - If a command is expensive or long-running, prefer the smallest command that gives confidence.
 - If the repo requires secrets, external services, or unavailable devices, report the blocker clearly.
+- Do not auto-commit, push, merge, deploy, or open external PRs unless the user explicitly requested that action.
 
 ## Output Format
 

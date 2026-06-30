@@ -41,6 +41,12 @@ Use `references/task-intake-template.md` when preparing a reusable task card or 
 6. Review before handoff: check the diff for unrelated changes, missing tests, architecture drift, data loss risk, and unsupported claims.
 7. Report precisely: changed files, validations, failures, blockers, residual risk, and the next human decision.
 
+Before any unattended or resumed segment, write or refresh a handoff checkpoint
+with the current objective, branch, dirty state, allowed write scope, commands
+already run, failed approaches, artifact paths, current hypothesis, and next
+planned validation. The checkpoint is the source of truth if conversation
+context is compacted or interrupted.
+
 Coordinate with other skills only when they fit the work:
 
 1. Use `$repo-context-bootstrap` for unfamiliar repositories.

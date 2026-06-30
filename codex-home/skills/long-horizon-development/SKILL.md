@@ -105,6 +105,11 @@ A useful checkpoint contains:
 
 For a reusable checkpoint format, read `references/checkpoint-template.md`.
 
+When resuming after context loss, prefer the newest durable checkpoint over
+conversation memory. Confirm the branch, dirty state, last validation command,
+artifact paths, and next step before editing. If a checkpoint is absent, create
+a read-only reconstruction summary before continuing.
+
 ## Stop Conditions
 
 For ordinary long-horizon work, stop implementation and switch to a report when:
